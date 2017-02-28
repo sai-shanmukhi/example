@@ -1,7 +1,6 @@
 
 
 import java.io.IOException;
-import javax.servlet.RequestDispatcher;
 import java.io.PrintWriter;
 import java.sql.*;
 
@@ -29,12 +28,15 @@ public class Hello extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    public String concatenate(String one,String two)
+    {
+		return one + two;
+    	
+    }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		// response.getWriter().append("Served at: ").append(request.getContextPath());
-		 response.setContentType("text/html");
+		    response.setContentType("text/html");
 	        PrintWriter printWriter  = response.getWriter();
-	        //printWriter.println("<h1>Hello World!</h1>");
+	        printWriter.println("<h1>Hello World!</h1>");
 	        try
 	        {
 	            Class.forName("com.mysql.jdbc.Driver");
